@@ -1,0 +1,21 @@
+<h1>Movies#index</h1>
+<p>Find me in app/views/movies/index.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <%= form_with url: movies_path, method: :get, class: "d-flex my-3" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a movie"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %> 
+      <% @movies.each do |movie| %>
+        <h4><%= movie.title %></h4>
+        <p><%= movie.synopsis %></p>
+      <% end %>
+    </div>
+  </diV>
+</div>
